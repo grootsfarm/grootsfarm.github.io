@@ -38,6 +38,15 @@ function submitForm(e) {
             document.querySelector('.notification').style.display = 'none';
         }, 3000);
         document.getElementById('contactForm').reset();
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "farm.groots",
+            Password : "verticalfarm",
+            To : 'farm.groots@gmail.com',
+            From : email,
+            Subject : sbjct,
+            Body : "Hello lamjartlin <br>"+ name + "-->" + message
+        });
     }
     else {
         // Notify 
@@ -66,6 +75,7 @@ function submitSubscribeForm(e) {
             document.querySelector('.subscription').style.display = 'none';
         }, 3000);
         document.getElementById('Subscribe').reset();
+
     }
     else {
         // Notify 
