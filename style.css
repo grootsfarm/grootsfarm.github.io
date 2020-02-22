@@ -431,7 +431,7 @@ input:focus {
       .header-area .famie-main-menu .classy-navbar .classynav ul li a {
         font-weight: 400;
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: 30px;
         color: #303030; }
         .header-area .famie-main-menu .classy-navbar .classynav ul li a:focus, .header-area .famie-main-menu .classy-navbar .classynav ul li a:hover {
           color: #77b122; }
