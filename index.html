@@ -45,10 +45,10 @@
               <!-- Navbar Start -->
               <div class="classynav">
                 <ul>
-                  <li><a style="cursor: pointer;" onclick="window.scroll(0, 800)">About</a></li>
-                  <li><a style="cursor: pointer;" onclick="window.scroll(0, 1585)">Our Service</a></li>
-                  <li><a style="cursor: pointer;" onclick="window.scroll(0, 2400)">Our Products</a></li>
-                  <li><a style="cursor: pointer;" onclick="window.scroll(0, 3600)">Contact</a></li>
+                  <li><a style="cursor: pointer;" onclick="scrollToElem('about')">About</a></li>
+                  <li><a style="cursor: pointer;" onclick="scrollToElem('service')">Our Service</a></li>
+                  <li><a style="cursor: pointer;" onclick="scrollToElem('products')">Our Products</a></li>
+                  <li><a style="cursor: pointer;" onclick="scrollToElem('contact')">Contact</a></li>
                 </ul>
               <!-- Navbar End -->
             </div>
@@ -98,8 +98,8 @@
   <!-- ##### Hero Area End ##### -->
 
   <!-- ##### About Us Area Start ##### -->
-  <section class="about-us-area" style="margin-top: 100px;">
-    <div class="container">
+  <section id="about" class="about-us-area" style="margin-top: 100px;">
+    <div  class="container">
       <div class="align-items-center">
         <!-- About Us Content -->
         <div>
@@ -109,7 +109,7 @@
               <h2>About Groots</h2>
               <img src="img/core-img/decor.png" alt="">
             </div>
-            <p>It's 21 century where farming will become much cooler with vertical farming system and Groots technology that make farming more easier by controlling it's environment conditions such as temperature, water consumption, nutrients, etc... by sensing those elements to gather data that help in improving the plant texture, color and it's taste </p>
+            <p>It's 21 century where farming will become much cooler with vertical farming system and Groots technology that make farming more easier by controlling it's environment conditions such as temperature, water consumption, nutrients, etc... by sensing those elements to gather data that help in improving the plant texture, color and it's flavor.</p>
             <a href="#" class="btn famie-btn mt-30">Read More</a>
           </div>
         </div>
@@ -119,7 +119,7 @@
   <!-- ##### About Us Area End ##### -->
 
   <!-- ##### Services Area Start ##### -->
-  <section class="services-area d-flex flex-wrap">
+  <section class="services-area d-flex flex-wrap" id="service">
     <!-- Service Thumbnail -->
     <div class="services-thumbnail bg-img" style="background-image: url('img/bg-img/service2.jpeg');"></div>
 
@@ -139,7 +139,7 @@
 
         <div class="row">
           <div class="col-12 mb-50">
-            <p>Groots service allow you to grow in houses, restaurents and any unused spaces consuming less resources and give you manual or automate control for your plants remotely without any effort</p>
+            <p>Groots service allow you to grow food indoors (house, restaurant or any unused spaces) consuming less resources using our technology to automate the system by changing it's environment elements for each growth stage until the harvest of your plants</p>
           </div>
           <!-- Single Service Area -->
           <div class="col-12 col-lg-6">
@@ -147,9 +147,9 @@
               <!-- Service Title -->
               <div class="service-title mb-3 d-flex align-items-center">
                 <img src="img/core-img/s1.png" alt="">
-                <h5>Fruit &amp; Vegetable</h5>
+                <h5>Full automation</h5>
               </div>
-              <p>Intiam eu sagittis est, aster cosmo lacini libero. Praesent dignissim sed odio velo aliquam manta legolas. </p>
+              <p>Farming is much easier than before with our full automation of an indoor farming system with the given access to our platform to track the growth of your plants remotly</p>
             </div>
           </div>
 
@@ -159,21 +159,9 @@
               <!-- Service Title -->
               <div class="service-title mb-3 d-flex align-items-center">
                 <img src="img/core-img/s2.png" alt="">
-                <h5>Meat &amp; Eggs</h5>
+                <h5>Less resources</h5>
               </div>
-              <p>Intiam eu sagittis est, aster cosmo lacini libero. Praesent dignissim sed odio velo aliquam manta legolas. </p>
-            </div>
-          </div>
-
-          <!-- Single Service Area -->
-          <div class="col-12 col-lg-6">
-            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="500ms">
-              <!-- Service Title -->
-              <div class="service-title mb-3 d-flex align-items-center">
-                <img src="img/core-img/s3.png" alt="">
-                <h5>Milk &amp; Cheese</h5>
-              </div>
-              <p>Intiam eu sagittis est, aster cosmo lacini libero. Praesent dignissim sed odio velo aliquam manta legolas. </p>
+              <p>Using aeroponics system which consume less water and nutrients than other vertical farming systems providing the plants exact resources needed without any waste</p>
             </div>
           </div>
 
@@ -183,9 +171,21 @@
               <!-- Service Title -->
               <div class="service-title mb-3 d-flex align-items-center">
                 <img src="img/core-img/s4.png" alt="">
-                <h5>Rice &amp; Corn</h5>
+                <h5>High quality food</h5>
               </div>
-              <p>Intiam eu sagittis est, aster cosmo lacini libero. Praesent dignissim sed odio velo aliquam manta legolas. </p>
+              <p>We grow organic food using no pesticides, we prevent airbone diseases within our system by controlling the environment elements for stable growth and provides high quality food in harvest</p>
+            </div>
+          </div>
+
+          <!-- Single Service Area -->
+          <div class="col-12 col-lg-6">
+            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="500ms">
+              <!-- Service Title -->
+              <div class="service-title mb-3 d-flex align-items-center">
+                <img src="img/core-img/s3.png" alt="">
+                <h5>Faster growth</h5>
+              </div>
+              <p>At Groots, we care about precision farming, we use the data collected to improve the plant growth cycle, our goal is to produce high quality food in less time</p>
             </div>
           </div>
 
@@ -196,7 +196,7 @@
   <!-- ##### Services Area End ##### -->
 
   <!-- ##### Our Products Area Start ##### -->
-  <section class="our-products-area section-padding-100">
+  <section class="our-products-area section-padding-100" id="products">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -283,6 +283,7 @@
           </div>
         </div>
       </div>
+      <div style="text-align: center;font-size: 22px;color:lightgray;">And more to come...</div>
   </section>
   <!-- ##### Our Products Area End ##### -->
 
@@ -294,12 +295,10 @@
           <div class="newsletter-content">
             <!-- Section Heading -->
             <div class="section-heading white text-center">
-              <p>What we do</p>
-              <h2><span>Our Produce</span> Is Mainstay For Us</h2>
+              <h2>Get informed about our latest news</h2>
               <img src="img/core-img/decor2.png" alt="">
             </div>
-            <p class="text-white mb-50 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at diam convallis ligula cursus bibendum sed at enim. Class aptent taciti sociosqu ad litora torquent conubia nostra, per inceptos
-              himenaeos.</p>
+            <p class="text-white mb-50 text-center">Suscribe with us to get the last updates about us and our newest products, more is coming and will keep you in touch during our journey to make our cities green</p>
           </div>
         </div>
       </div>
@@ -324,14 +323,13 @@
           <!-- Section Heading -->
           <div class="section-heading text-center">
             <p>Make the green world</p>
-            <h2><span>Farming Practices</span> To Preserve Land & Water</h2>
+            <h2>Farming problems</h2>
             <img src="img/core-img/decor2.png" alt="">
           </div>
         </div>
       </div>
 
       <div class="row">
-
         <!-- Single Farming Practice Area -->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="400ms">
@@ -345,9 +343,8 @@
               <div class="farming-icon">
                 <img src="img/core-img/cereal.png" alt="">
               </div>
-              <span>Fast growth </span>
-              <h4>Improved Rice Cultivation</h4>
-              <p>Donec nec justo eget felis facilisis ferme ntum. Aliquam portitor mauris sit amet orci. donec salim...</p>
+              <h4>Crops quality</h4>
+              <p>It's hard to find some quality food nowadays due to the significant use of pesticides in cultivation lands, growing indoors in an isolated environment make the plants protected from diseases</p>
             </div>
           </div>
         </div>
@@ -365,9 +362,8 @@
               <div class="farming-icon">
                 <img src="img/core-img/sprout.png" alt="">
               </div>
-              <span>Farming practice for</span>
-              <h4>Soil Improvement Techniques</h4>
-              <p>Donec nec justo eget felis facilisis ferme ntum. Aliquam portitor mauris sit amet orci. donec salim...</p>
+              <h4>Arable lands</h4>
+              <p>due to changing climate and desertification cultivation soil are in decrease, vertical farming system can grow more food verticaly than cultivation land with replacing soil with nutrients to feed the plant</p>
             </div>
           </div>
         </div>
@@ -385,9 +381,8 @@
               <div class="farming-icon">
                 <img src="img/core-img/vegetable.png" alt="">
               </div>
-              <span>Farming practice for</span>
-              <h4>Intensive Fruit Farming</h4>
-              <p>Donec nec justo eget felis facilisis ferme ntum. Aliquam portitor mauris sit amet orci. donec salim...</p>
+              <h4>Food miles</h4>
+              <p>Transporting crops from a foreign country to local can decrease it's quality and purchased with higher cost</p>
             </div>
           </div>
         </div>
@@ -398,7 +393,7 @@
   <!-- ##### Farming Practice Area End ##### -->
 
   <!-- ##### Contact Area Start ##### -->
-  <section class="contact-area section-padding-100-0">
+  <section class="contact-area section-padding-100-0" id="contact">
     <div class="container">
       <div class="row justify-content-between">
 
@@ -454,67 +449,6 @@
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="footer-widget mb-80">
               <a href="index.html" style="font-size: 36px;"><span style="color: green;">G</span>roots</a>
-              <p>Lorem ipsum dolor sit amet, consecte stare adipiscing elit. In act honcus risus atiner Pellentesque risus.</p>
-              <div class="contact-info">
-                <p><i class="fa fa-map-pin" aria-hidden="true"></i><span>120 Raymond Rd, New York</span></p>
-                <p><i class="fa fa-envelope" aria-hidden="true"></i><span>info.deercreative@gmail.com</span></p>
-                <p><i class="fa fa-phone" aria-hidden="true"></i><span>+84 223 9000</span></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Single Footer Widget Area -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="footer-widget mb-80">
-              <h5 class="widget-title">QUICK LINK</h5>
-              <!-- Footer Widget Nav -->
-              <nav class="footer-widget-nav">
-                <ul>
-                  <li><a href="#">Purchase</a></li>
-                  <li><a href="#">Policities</a></li>
-                  <li><a href="#">Shipping</a></li>
-                  <li><a href="#">FAQs</a></li>
-                  <li><a href="#">Return</a></li>
-                  <li><a href="#">Careers</a></li>
-                  <li><a href="#">Payments</a></li>
-                  <li><a href="#">Partners</a></li>
-                  <li><a href="#">Guide</a></li>
-                  <li><a href="#">Standard</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Brands</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <!-- Single Footer Widget Area -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="footer-widget mb-80">
-              <h5 class="widget-title">RECENT NEWS</h5>
-
-              <!-- Single Recent News Start -->
-              <div class="single-recent-blog d-flex align-items-center">
-                <div class="post-thumbnail">
-                  <img src="img/bg-img/4.jpg" alt="">
-                </div>
-                <div class="post-content">
-                  <a href="#" class="post-title">WA’s largest farming business on the market</a>
-                  <div class="post-date">18 Aug 2018</div>
-                </div>
-              </div>
-
-              <!-- Single Recent News Start -->
-              <div class="single-recent-blog d-flex align-items-center">
-                <div class="post-thumbnail">
-                  <img src="img/bg-img/5.jpg" alt="">
-                </div>
-                <div class="post-content">
-                  <a href="#" class="post-title">Beef retail prices hit a record</a>
-                  <div class="post-date">18 Aug 2018</div>
-                </div>
-              </div>
-
-            </div>
           </div>
 
           <!-- Single Footer Widget Area -->
@@ -532,8 +466,8 @@
                   <span>Twitter</span>
                 </a>
                 <a href="#">
-                  <i class="fa fa-pinterest" aria-hidden="true"></i>
-                  <span>Pinterest</span>
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                  <span>Instagram</span>
                 </a>
               </div>
             </div>
@@ -570,6 +504,7 @@
   <script src="js/jarallax-video.min.js"></script>
   <!-- Active js -->
   <script src="js/active.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
