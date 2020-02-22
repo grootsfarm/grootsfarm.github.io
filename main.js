@@ -51,7 +51,7 @@ function submitForm(e) {
     else {
         // Notify 
         document.querySelector('.errorcontact').style.display = 'block';
-        // Hide Notification
+        // Hide Notification 
         setTimeout(() => {
             document.querySelector('.errorcontact').style.display = 'none';
         }, 3000);
