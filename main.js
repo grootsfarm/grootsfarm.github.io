@@ -17,16 +17,27 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 //   firebase.analytics();
-
-// Reference collection contact
+// Reference collection messages
 var messagesRef = firebase.database().ref('messages');
-// Reference collection contact
+// Reference collection subscriptions
 var subscriptionRef = firebase.database().ref('subscriptions');
+// Reference co
+var favoriteproductsRef = firebase.database().ref('favoriteproducts');
 // Listener for contact submit
 document.getElementById('contactForm').addEventListener('submit', submitForm);
-
 // Listener for contact submit
 document.getElementById('Subscribe').addEventListener('submit', submitSubscribeForm);
+// Like Lettuce
+document.getElementById('likelettuce').addEventListener('click', likelettuce);
+
+function likelettuce(e) {
+    e.preventDefault();
+    $.getJSON("https://api.ipify.org?format=json",
+        function (data) {
+            userip = data.ip;
+            saveLike(userip, "Lettuce");
+        })
+}
 // submit form
 function submitForm(e) {
     e.preventDefault();
@@ -44,13 +55,13 @@ function submitForm(e) {
         }, 3000);
         document.getElementById('contactForm').reset();
         Email.send({
-            Host : "smtp.gmail.com",
-            Username : "farm.groots",
-            Password : "verticalfarm",
-            To : 'farm.groots@gmail.com',
-            From : email,
-            Subject : sbjct,
-            Body : "Hello lamjartlin <br>"+ name + "-->" + message
+            Host: "smtp.gmail.com",
+            Username: "farm.groots",
+            Password: "verticalfarm",
+            To: 'farm.groots@gmail.com',
+            From: email,
+            Subject: sbjct,
+            Body: "Hello lamjartlin <br>" + name + "-->" + message
         });
     }
     else {
@@ -111,6 +122,15 @@ function saveSubscription(email) {
     var newSubscriptionRef = subscriptionRef.push();
     newSubscriptionRef.set({
         email: email
+    });
+}
+
+//Save like 
+function saveLike(userip, like) {
+    var newfavoriteproductsRef = favoriteproductsRef.push();
+    newfavoriteproductsRef.set({
+        user: userip,
+        like: like
     });
 }
 
