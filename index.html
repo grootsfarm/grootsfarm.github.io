@@ -74,7 +74,7 @@
                 <p data-animation="fadeInUp" data-delay="400ms">Groots Technology and it's vertical farming system allow
                   you to grow food in unused spaces using less water and nutrients with the full control of the
                   environment remotly</p>
-                <a href="#" class="btn famie-btn mt-4" data-animation="fadeInUp" data-delay="400ms">Contact Us</a>
+                <a class="btn famie-btn mt-4" data-animation="fadeInUp" data-delay="400ms" onclick="scrollToElem('contact')">Contact Us</a>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@
                 <p data-animation="fadeInDown" data-delay="400ms">Growing our plants isolated from the outside
                   environment to prevent diseases and unstable weather and provide them the minereals and resources
                   needed for stable and healty growth</p>
-                <a href="#" class="btn famie-btn mt-4" data-animation="fadeInDown" data-delay="400ms">Contact Us</a>
+                <a class="btn famie-btn mt-4" data-animation="fadeInDown" data-delay="400ms" onclick="scrollToElem('contact')">Contact Us</a>
               </div>
             </div>
           </div>
@@ -449,43 +449,34 @@
   <!-- ##### Contact Area End ##### -->
 
   <!-- ##### Footer Area Start ##### -->
-  <footer class="footer-area">
-    <!-- Main Footer Area -->
-      <div class="container">
-        <div class="row">
-
-          <!-- Single Footer Widget Area -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="footer-widget mb-80">
-              <a href="index.html" style="font-size: 36px;"><span style="color: green;">G</span>roots</a>
-          </div>
-
-          <!-- Single Footer Widget Area -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="footer-widget mb-80">
-              <h5 class="widget-title">STAY CONNECTED</h5>
-              <!-- Footer Social Info -->
-              <div class="footer-social-info">
-                <a href="#">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                  <span>Facebook</span>
-                </a>
-                <a href="#">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                  <span>Twitter</span>
-                </a>
-                <a href="#">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                  <span>Instagram</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </footer>
+<!-- Footer -->
+<footer class="page-footer font-small" style="background-color: #f2f4f5;border-top: 1px solid green; padding: 20px 0px;">
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center footer-social-info">
+    <li class="list-inline-item">
+      <a class="btn-floating btn-fb mx-1">
+        <i class="fa fa-facebook-f"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-tw mx-1">
+        <i class="fa fa-twitter"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-gplus mx-1">
+        <i class="fa fa-instagram"> </i>
+      </a>
+    </li>
+  </ul>
+  <!-- Social buttons -->
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#">Groots</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
   <!-- ##### Footer Area End ##### -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>

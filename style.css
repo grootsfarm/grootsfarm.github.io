@@ -1758,6 +1758,7 @@ input:focus {
   position: relative;
   z-index: 1; }
   .footer-social-info a {
+    cursor: pointer;
     display: block;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1778,6 +1779,7 @@ input:focus {
       text-align: center;
       color: #ffffff;
       border: 1px solid #77b122;
+      background-color: #77b122;
       line-height: 40px; }
     .footer-social-info a span {
       color: #b7b7b7;
@@ -1786,9 +1788,10 @@ input:focus {
       margin-left: 15px;
       font-weight: 400; }
     .footer-social-info a:focus i, .footer-social-info a:hover i {
-      background-color: #77b122; }
+      background-color: #ffffff;
+      color: #77b122; }
     .footer-social-info a:focus span, .footer-social-info a:hover span {
-      color: #ffffff; }
+      color: #77b122; }
 
 .contact-info-area {
   position: relative;
