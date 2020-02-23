@@ -23,19 +23,57 @@ var messagesRef = firebase.database().ref('messages');
 var subscriptionRef = firebase.database().ref('subscriptions');
 // Reference co
 var favoriteproductsRef = firebase.database().ref('favoriteproducts');
+
 // Listener for contact submit
 document.getElementById('contactForm').addEventListener('submit', submitForm);
 // Listener for contact submit
 document.getElementById('Subscribe').addEventListener('submit', submitSubscribeForm);
 // Like Lettuce
 document.getElementById('likelettuce').addEventListener('click', likelettuce);
+// Like Microgreens
+document.getElementById('likeMicrogreens').addEventListener('click', likeMicrogreens);
+// Like Lettuce
+document.getElementById('likeBasil').addEventListener('click', likeBasil);
+// Like Spanich
+document.getElementById('likeSpanich').addEventListener('click', likeSpanich);
 
+// Like Lettuce
 function likelettuce(e) {
     e.preventDefault();
+    Addlike("Lettuce");
+}
+// Like Spanich
+function likeSpanich(e) {
+    e.preventDefault();
+    Addlike("Spanich");
+}
+// Like Microgreens
+function likeMicrogreens(e) {
+    e.preventDefault();
+    Addlike("Microgreens");
+}
+// Like Basil
+function likeBasil(e) {
+    e.preventDefault();
+    Addlike("Basil");
+}
+//Add like 
+function Addlike(liked) {
     $.getJSON("https://api.ipify.org?format=json",
         function (data) {
             userip = data.ip;
-            saveLike(userip, "Lettuce");
+            var exist = false;
+            var ref = firebase.database().ref('favoriteproducts');
+            ref.on("value", function (like) {
+                like.forEach(function (child) {
+                    if (child.val().user === userip && child.val().like === liked)
+                        exist = true;
+                })
+                if (!exist)
+                    saveLike(userip, liked);
+            }, function (error) {
+                console.log("Error: " + error.code);
+            });
         })
 }
 // submit form
