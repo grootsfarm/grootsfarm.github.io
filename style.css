@@ -803,6 +803,7 @@ input:focus {
       display: inline-block;
       color: #ffffff; }
     .single-product-area .product-thumbnail .product-meta-data {
+      cursor: pointer;
       -webkit-transition-duration: 500ms;
       -o-transition-duration: 500ms;
       transition-duration: 500ms;
