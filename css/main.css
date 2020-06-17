@@ -2,16 +2,16 @@
 /* :: 1.0 Import Fonts */
 @import url("https://fonts.googleapis.com/css?family=Karla:400,700");
 /* :: 2.0 Import All CSS Plugins */
-@import url(css/bootstrap.min.css);
-@import url(css/classy-nav.css);
-@import url(css/font-awesome.min.css);
-@import url(css/owl.carousel.min.css);
-@import url(css/animate.css);
-@import url(css/style.css);
-@import url(css/magnific-popup.css);
+@import url(lib/bootstrap.min.css);
+@import url(lib/classy-nav.css);
+@import url(font-awesome.min.css);
+@import url(lib/owl.carousel.min.css);
+@import url(style.css);
+
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0; 
+}
 
 body {
   font-family: "Karla", sans-serif;
@@ -431,14 +431,14 @@ input:focus {
       .header-area .famie-main-menu .classy-navbar .classynav ul li a {
         font-weight: 400;
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: 18px;
         color: #303030; }
         .header-area .famie-main-menu .classy-navbar .classynav ul li a:focus, .header-area .famie-main-menu .classy-navbar .classynav ul li a:hover {
           color: #77b122; }
       .header-area .famie-main-menu .classy-navbar .classynav ul li ul li a {
         text-transform: capitalize;
         padding: 0 20px;
-        font-size: 14px;
+        font-size: 18px;
         color: #0f1112;
         line-height: 34px;
         height: 35px; }
@@ -803,6 +803,7 @@ input:focus {
       display: inline-block;
       color: #ffffff; }
     .single-product-area .product-thumbnail .product-meta-data {
+      cursor: pointer;
       -webkit-transition-duration: 500ms;
       -o-transition-duration: 500ms;
       transition-duration: 500ms;
@@ -1758,6 +1759,7 @@ input:focus {
   position: relative;
   z-index: 1; }
   .footer-social-info a {
+    cursor: pointer;
     display: block;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1778,6 +1780,7 @@ input:focus {
       text-align: center;
       color: #ffffff;
       border: 1px solid #77b122;
+      background-color: #77b122;
       line-height: 40px; }
     .footer-social-info a span {
       color: #b7b7b7;
@@ -1786,9 +1789,10 @@ input:focus {
       margin-left: 15px;
       font-weight: 400; }
     .footer-social-info a:focus i, .footer-social-info a:hover i {
-      background-color: #77b122; }
+      background-color: #ffffff;
+      color: #77b122; }
     .footer-social-info a:focus span, .footer-social-info a:hover span {
-      color: #ffffff; }
+      color: #77b122; }
 
 .contact-info-area {
   position: relative;
