@@ -13,19 +13,27 @@
   <!--<link rel="icon" href="img/core-img/favicon.ico">-->
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="css/main.css">
-  
+  <script src="js/lib/angular.min.js" ></script>
+  <script src="js/lib/angular-route.min.js" ></script>
+  <script src="js/app.js" ></script>
 </head>
-
-<body>
+<body ng-app="grootsApp" ng-Controller="langCtrl">
   <!-- Preloader -->
   <div class="preloader d-flex align-items-center justify-content-center">
     <div class="spinner"></div>
   </div>
-
   <!-- ##### Header Area Start  ##### -->
   <header class="header-area">
-
     <!-- Navbar Area -->
+    <!--<div class="lang-hov" style="background: whitesmoke;height: 70px;padding: 10px;">
+      <div style="margin:auto; width: 300px;">
+        <p style="float: left;">change language</p>
+        <select class="form-control" style="width: 130px;height: 40px;;;float: right;" id="lang" ng-model="selectedLang" ng-change="changed()">
+          <option value="fr" selected>{{lang.french}}</option>
+          <option value="en">{{lang.english}}</option>
+        </select>
+      </div>
+    </div>-->
     <div class="famie-main-menu">
       <div class="classy-nav-container breakpoint-off">
         <div class="container">
@@ -46,9 +54,9 @@
               <!-- Navbar Start -->
               <div class="classynav">
                 <ul>
-                  <li><a style="cursor: pointer;" onclick="scrollToElem('about')">About</a></li>
-                  <li><a style="cursor: pointer;" onclick="scrollToElem('service')">Our Service</a></li>
-                  <li><a style="cursor: pointer;" onclick="scrollToElem('products')">Our Products</a></li>
+                  <li><a style="cursor: pointer;" onclick="scrollToElem('about')">{{lang.about}}</a></li>
+                  <li><a style="cursor: pointer;" onclick="scrollToElem('service')">{{lang.our}} Service</a></li>
+                  <li><a style="cursor: pointer;" onclick="scrollToElem('products')">{{lang.our}} {{lang.product}}s</a></li>
                   <li><a style="cursor: pointer;" onclick="scrollToElem('contact')">Contact</a></li>
                 </ul>
                 <!-- Navbar End -->
@@ -71,11 +79,9 @@
           <div class="row h-100 align-items-center">
             <div class="col-12 col-lg-10">
               <div class="welcome-content">
-                <h2 data-animation="fadeInUp" data-delay="200ms">Growing high quality crops with less resources</h2>
-                <p data-animation="fadeInUp" data-delay="400ms">Groots Technology and it's vertical farming system allow
-                  you to grow food in unused spaces using less water and nutrients with the full control of the
-                  environment remotly</p>
-                <a class="btn famie-btn mt-4" data-animation="fadeInUp" data-delay="400ms" onclick="scrollToElem('contact')">Contact Us</a>
+                <h2 data-animation="fadeInUp" data-delay="200ms">{{lang.slide_one_title}}</h2>
+                <p data-animation="fadeInUp" data-delay="400ms">{{lang.slide_one_content}}</p>
+                <a class="btn famie-btn mt-4" data-animation="fadeInUp" data-delay="400ms" onclick="scrollToElem('contact')">{{lang.contact_us}}</a>
               </div>
             </div>
           </div>
@@ -89,11 +95,9 @@
           <div class="row h-100 align-items-center">
             <div class="col-12 col-lg-10">
               <div class="welcome-content">
-                <h2 data-animation="fadeInDown" data-delay="200ms">Bio food with year around production</h2>
-                <p data-animation="fadeInDown" data-delay="400ms">Growing our plants isolated from the outside
-                  environment to prevent diseases and unstable weather and provide them the minereals and resources
-                  needed for stable and healty growth</p>
-                <a class="btn famie-btn mt-4" data-animation="fadeInDown" data-delay="400ms" onclick="scrollToElem('contact')">Contact Us</a>
+                <h2 data-animation="fadeInDown" data-delay="200ms">{{lang.slide_two_title}}</h2>
+                <p data-animation="fadeInDown" data-delay="400ms">{{lang.slide_two_content}}</p>
+                <a class="btn famie-btn mt-4" data-animation="fadeInDown" data-delay="400ms" onclick="scrollToElem('contact')">{{lang.contact_us}}</a>
               </div>
             </div>
           </div>
@@ -113,11 +117,11 @@
           <div class="about-us-content mb-100">
             <!-- Section Heading -->
             <div class="section-heading">
-              <h2>About Groots</h2>
+              <h2>{{lang.about}} Groots</h2>
               <img src="img/core-img/decor.png" alt="">
             </div>
-            <p>It's 21 century where farming will become much cooler with vertical farming system and Groots technology that make farming more easier by controlling it's environment conditions such as temperature, water consumption, nutrients, etc... by sensing those elements to gather data that help in improving the plant texture, color and it's flavor.</p>
-            <a href="#" class="btn famie-btn mt-30">Read More</a>
+            <p>{{lang.mini_description}}</p>
+            <a href="#" class="btn famie-btn mt-30">{{lang.read_more}}</a>
           </div>
         </div>
       </div>
@@ -137,8 +141,8 @@
           <div class="col-12">
             <!-- Section Heading -->
             <div class="section-heading">
-              <p>Our service</p>
-              <h2>From harvest to your dish</h2>
+              <p>{{lang.our}} service</p>
+              <h2>{{lang.service_header}}</h2>
               <img src="img/core-img/decor.png" alt="">
             </div>
           </div>
@@ -146,16 +150,16 @@
 
         <div class="row">
           <div class="col-12 mb-50">
-            <p>Groots service allow you to grow food indoors (house, restaurant or any unused spaces) consuming less resources using our technology to automate the system by changing it's environment elements for each growth stage until the harvest of your plants</p>
+            <p>{{lang.service_description}}</p>
           </div>
           <!-- Single Service Area -->
           <div class="col-12 col-lg-6">
             <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="100ms">
               <!-- Service Title -->
               <div class="service-title mb-3 d-flex align-items-center">
-                <h5>Full automation</h5>
+                <h5>{{lang.service_title_one}}</h5>
               </div>
-              <p>Farming is much easier than before with our full automation of an indoor farming system with the given access to our platform to track the growth of your plants remotly</p>
+              <p>{{lang.service_par_one}}</p>
             </div>
           </div>
 
@@ -164,9 +168,9 @@
             <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="300ms">
               <!-- Service Title -->
               <div class="service-title mb-3 d-flex align-items-center">
-                <h5>Less resources</h5>
+                <h5>{{lang.service_title_two}}</h5>
               </div>
-              <p>Using aeroponics system which consume less water and nutrients than other vertical farming systems providing the plants exact resources needed without any waste</p>
+              <p>{{lang.service_par_two}}</p>
             </div>
           </div>
 
@@ -175,9 +179,9 @@
             <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="700ms">
               <!-- Service Title -->
               <div class="service-title mb-3 d-flex align-items-center">
-                <h5>High quality food</h5>
+                <h5>{{lang.service_title_three}}</h5>
               </div>
-              <p>We grow organic food using no pesticides, we prevent airbone diseases within our system by controlling the environment elements for stable growth and provides high quality food in harvest</p>
+              <p>{{lang.service_par_three}}</p>
             </div>
           </div>
 
@@ -186,9 +190,9 @@
             <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="500ms">
               <!-- Service Title -->
               <div class="service-title mb-3 d-flex align-items-center">
-                <h5>Faster growth</h5>
+                <h5>{{lang.service_title_four}}</h5>
               </div>
-              <p>At Groots, we care about precision farming, we use the data collected to improve the plant growth cycle, our goal is to produce high quality food in less time</p>
+              <p>{{lang.service_par_four}}</p>
             </div>
           </div>
 
@@ -205,8 +209,8 @@
         <div class="col-12">
           <!-- Section Heading -->
           <div class="section-heading text-center">
-            <p>Featured Products</p>
-            <h2><span>Our Product</span> Are Highest Quality</h2>
+            <p>{{lang.featured_products}}</p>
+            <h2><span>{{lang.our}} {{lang.product}}s</span> {{lang.highest_quality}}</h2>
             <img src="img/core-img/decor2.png" alt="">
           </div>
         </div>
@@ -228,7 +232,7 @@
             </div>
             <!-- Product Description -->
             <div class="product-desc text-center pt-4">
-              <a href="#" class="product-title">Lettuce</a>
+              <a href="#" class="product-title">{{lang.lettuce}}</a>
             </div>
           </div>
         </div>
@@ -247,7 +251,7 @@
             </div>
             <!-- Product Description -->
             <div class="product-desc text-center pt-4">
-              <a href="#" class="product-title">Microgreens</a>
+              <a href="#" class="product-title">{{lang.microgreens}}</a>
             </div>
           </div>
         </div>
@@ -266,7 +270,7 @@
             </div>
             <!-- Product Description -->
             <div class="product-desc text-center pt-4">
-              <a href="#" class="product-title">Basil</a>
+              <a href="#" class="product-title">{{lang.basil}}</a>
             </div>
           </div>
         </div>
@@ -285,7 +289,7 @@
             </div>
             <!-- Product Description -->
             <div class="product-desc text-center pt-4">
-              <a href="#" class="product-title">Spanich</a>
+              <a href="#" class="product-title">{{lang.spanich}}</a>
             </div>
           </div>
         </div>
@@ -304,12 +308,12 @@
               </div>
               <!-- Product Description -->
               <div class="product-desc text-center pt-4">
-                <a href="#" class="product-title">Arugula</a>
+                <a href="#" class="product-title">{{lang.arugula}}</a>
               </div>
             </div>
           </div>
       </div>
-      <div style="text-align: center;font-size: 22px;color:lightgray;">And more to come...</div>
+      <div style="text-align: center;font-size: 22px;color:lightgray;">{{lang.more_to_come}}...</div>
   </section>
   <!-- ##### Our Products Area End ##### -->
 
@@ -322,21 +326,21 @@
           <div class="newsletter-content">
             <!-- Section Heading -->
             <div class="section-heading white text-center">
-              <h2>Get informed about our latest news</h2>
+              <h2>{{lang.subscribe_header}}</h2>
               <img src="img/core-img/decor2.png" alt="">
             </div>
-            <p class="text-white mb-50 text-center">Suscribe with us to get the last updates about us and our newest products, more is coming and will keep you in touch during our journey to make our cities green</p>
+            <p class="text-white mb-50 text-center">{{lang.subscribe_content}}</p>
           </div>
         </div>
       </div>
       <!-- Newsletter Form -->
       <div class="row justify-content-center">
         <div class="col-12 col-lg-6">
-          <div class="subscription">Thanks for your support.</div>
-          <div class="errorsubscription">Something went wrong please try again.</div>
+          <div class="subscription">{{lang.subscribe_message}}</div>
+          <div class="errorsubscription">{{lang.sent_error}}</div>
           <form id="Subscribe">
-            <input type="email" id="emailsub" class="form-control" placeholder="Enter your email">
-            <button type="submit" class="btn famie-btn">Subscribe</button>
+            <input type="email" id="emailsub" class="form-control" placeholder="{{lang.your}} {{lang.email}}">
+            <button type="submit" class="btn famie-btn">{{lang.subscribe}}</button>
           </form>
         </div>
       </div>
@@ -351,8 +355,7 @@
         <div class="col-12">
           <!-- Section Heading -->
           <div class="section-heading text-center">
-            <p>Make the green world</p>
-            <h2>Farming problems</h2>
+            <h2>{{lang.problems_header}}</h2>
             <img src="img/core-img/decor2.png" alt="">
           </div>
         </div>
@@ -371,8 +374,8 @@
               <div class="farming-icon">
                 <img src="img/core-img/cereal.png" alt="">
               </div>
-              <h4>Crops quality</h4>
-              <p>It's hard to find some quality food nowadays due to the significant use of pesticides in cultivation lands, growing indoors in an isolated environment make the plants protected from diseases</p>
+              <h4>{{lang.problem_title_one}}</h4>
+              <p>{{lang.problem_content_one}}</p>
             </div>
           </div>
         </div>
@@ -389,8 +392,8 @@
               <div class="farming-icon">
                 <img src="img/core-img/sprout.png" alt="">
               </div>
-              <h4>Arable lands</h4>
-              <p>due to changing climate and desertification cultivation soil are in decrease, vertical farming system can grow more food verticaly than cultivation land with replacing soil with nutrients to feed the plant</p>
+              <h4>{{lang.problem_title_two}}</h4>
+              <p>{{lang.problem_content_two}}</p>
             </div>
           </div>
         </div>
@@ -407,8 +410,8 @@
               <div class="farming-icon">
                 <img src="img/core-img/vegetable.png" alt="">
               </div>
-              <h4>Food miles</h4>
-              <p>Transporting crops from a foreign country to local can decrease it's quality and purchased with higher cost</p>
+              <h4>{{lang.problem_title_three}}</h4>
+              <p>{{lang.problem_content_three}}</p>
             </div>
           </div>
         </div>
@@ -428,32 +431,32 @@
           <div class="contact-content mb-100">
             <!-- Section Heading -->
             <div class="section-heading">
-              <p>Contact now</p>
-              <h2><span>Get In Touch</span> With Us</h2>
+              <p>{{lang.contact_us}}</p>
+              <h2><span>{{lang.get_in_touch}}</span> {{lang.with_us}}</h2>
               <img src="img/core-img/decor.png" alt="">
             </div>
             <!-- Contact Form Area -->
             <div class="contact-form-area">
-              <div class="notification">Your message has been sent succefully.</div>
-              <div class="errorcontact">Something went wrong please try again.</div>
+              <div class="notification">{{lang.contact_success}}</div>
+              <div class="errorcontact">{{lang.sent_error}}</div>
               <!-- Validation -->
               <form id="contactForm">
                 <div class="row">
                   <div class="col-lg-6">
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="{{lang.name}}">
                   </div>
                   <div class="col-lg-6">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="{{lang.email}}">
                   </div>
                   <div class="col-12">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Your Subject">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="{{lang.subject}}">
                   </div>
                   <div class="col-12">
                     <textarea name="message" id="message" class="form-control" cols="30" rows="10"
-                      placeholder="Your Message"></textarea>
+                      placeholder="Message"></textarea>
                   </div>
                   <div class="col-12">
-                    <button type="submit" class="btn famie-btn">Send Message</button>
+                    <button type="submit" class="btn famie-btn">{{lang.send}}</button>
                   </div>
                 </div>
               </form>
@@ -471,6 +474,13 @@
   <!-- ##### Footer Area Start ##### -->
 <!-- Footer -->
 <footer class="page-footer font-small" style="background-color: #f2f4f5;border-top: 1px solid green; padding: 20px 0px;">
+  <div style="width:130px; float: left;;position: relative;left: 30px;">
+    <div style="color: black;font-weight: bold;margin-bottom: 5px;">{{lang.language}}</div>
+    <select class="form-control"  id="lang" ng-model="selectedLang" ng-change="changed()">
+      <option value="fr" selected>{{lang.french}}</option>
+      <option value="en">{{lang.english}}</option>
+    </select>
+  </div>
   <!-- Social buttons -->
   <ul class="list-unstyled list-inline text-center footer-social-info">
     <li class="list-inline-item">
@@ -504,6 +514,7 @@
     "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
         </script>
     <script src="js/lib/jquery.min.js"></script>
+    <script src="js/init.js"></script>
     <script src="main.js"></script>
     <!-- ##### All Javascript Files ##### -->
     <!-- Popper js -->
