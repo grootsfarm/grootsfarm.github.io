@@ -4,7 +4,7 @@
 
 (function($) {
   'use strict';
-
+  
   var browserWindow = $(window);
   var welcomeSlide = $('.welcome-slides');
 

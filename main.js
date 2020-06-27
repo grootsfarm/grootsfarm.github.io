@@ -1,8 +1,8 @@
+
 function scrollToElem(id) {
 var elem = document.getElementById(id);
 elem.scrollIntoView();
 }
-
 // firebase.analytics();
 // Reference collection messages
 var messagesRef = firebase.database().ref('messages');

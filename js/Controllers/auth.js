@@ -1,4 +1,4 @@
-var app = angular.module("grootsModule", []);
+//var app = angular.module("grootsModule", []);
 //var uri = "https://groots-7f64d.firebaseio.com/"
 
 var accountsRef = firebase.database().ref('accounts');
@@ -16,7 +16,7 @@ app.controller("loginController", function($scope){
                 accounts.forEach(function (elem) {
                     if (elem.val().username == username.value && elem.val().password == password.value){
                         logged = true;
-                        window.location.href = "./customers_list.html";
+                        window.location.href = "#!admin";
                     }
                 });
             }, function(error){
