@@ -5,9 +5,6 @@ app.config(["$routeProvider",function($routeProvider){
     .when("/About",{
         templateUrl: "pages/about.html",
       //  controller: "AdminController"
-    }).when("/Admin",{
-    	templateUrl: "pages/auth.html",
-   //     controller: "AdminController"
     });
 }]);
 

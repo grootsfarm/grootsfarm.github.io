@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="grootsModule">
+    <head >
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Title -->
+        <title>Groots - LogIn</title>
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/auth.css">
+        <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+        <script src="../js/lib/jquery.min.js"></script>
+        <script src="../js/init.js"></script>
+        <script src="../js/lib/angular.min.js"></script>
+        <script src="../js/Controllers/auth.js"></script>
+    </head>
+    <body>
+        <div class="login-page" ng-controller="loginController">
+            <div class="form">
+                <a href="../index.html" style="font-size: 36px;"><span style="color: green;">G</span>roots</a>
+                <form class="login-form">
+                <input type="text" id="username" placeholder="username"/>
+                <input type="password" id="password" placeholder="password"/>
+                <button ng-click="logIn()">login</button>
+                <p class="error">{{message}}</p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
