@@ -1,0 +1,234 @@
+<div style="padding: 20px 5px;">
+        <div class="form-group" style="position: relative;top: 20px;;">
+            <div class="col-sm-11">
+              <button type="button" style="float: right;" class="btn btn-success new-rest">New restaurant</button>
+            </div>
+        </div>
+        <form class="search-form">
+            <input type="text" class="form-control" placeholder="Search.." name="search2" ng-model="search">           
+        </form>
+        <div class="restaurant-table">
+            <div style="background: whitesmoke;padding: 10px 15px;border-top-left-radius: 5px;border-top-right-radius: 5px;">
+                <div class="">
+                <input type="checkbox" style="width: 16px;height: 16px;" ng-model="isInterviewed" ng-click="Interviewed()">           
+                Interviewed
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>E-mail</th>
+                    <th>Lang</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="rest in filterData = (restaurants | filter : search) | limitTo:5:5*(page-1)">
+                        <td>{{rest.info.name}}</td>
+                        <td>{{rest.info.phone}}</td>
+                        <td>{{rest.info.email}}</td>
+                        <td>{{rest.info.lang}}</td>
+                        <td><button class="btn btn-warning btn-sm" ng-click="UpdateRest(rest)">Update</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="page">
+                <ul class="pagination pagination-md justify-content-center">
+                    <li class="page-item" ><a class="page-link"href="javascript:void(0)" ng-click="previous();">&lsaquo;</a></li>
+                    <li class="page-item" ng-repeat="p in listPages"><a class="page-link"  href="javascript:void(0)" ng-click="changePage(p)">{{p}}</a></li>
+                    <li class="page-item" ><a class="page-link"  href="javascript:void(0)" ng-click="next()">&rsaquo;</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="shadow-form">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span id="close">&times;</span>
+                    <h4 class="modal-title">Add restaurant</h4>
+                </div>
+                <form class="form-horizontal">
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Name" ng-model="newRest.name">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Phone</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="phone number" ng-model="newRest.phone">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Email" ng-model="newRest.email">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">City</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" ng-model="newRest.city">
+                                <option disabled selected value="null">Select a city</option>
+                                <option>Casablanca</option>
+                                <option>Marrakech</option>
+                                <option>Agadir</option>
+                                <option>Tanger</option>
+                                <option>Rabat</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Lang</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="language" ng-model="newRest.lang">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Website</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="www.example.com" ng-model="newRest.website">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Stars</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" ng-model="newRest.stars">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                          <button type="button" style="float: right;" class="btn btn-success save" ng-click="newRestaurant()">Save</button>
+                        </div>
+                  </div>
+                  
+                </form>
+            </div>
+        </div>
+        <div id="info-rest">
+            <div class="content-rest">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{selectedValue.name}}</h4>
+                </div>
+                <form class="form-horizontal">
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Name" ng-model="selectedValue.name">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Phone</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="phone number" ng-model="selectedValue.phone">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Email" ng-model="selectedValue.email">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">City</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" ng-model="selectedValue.city">
+                                <option disabled selected value="null">Select a city</option>
+                                <option>Casablanca</option>
+                                <option>Marrakech</option>
+                                <option>Agadir</option>
+                                <option>Tanger</option>
+                                <option>Rabat</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Lang</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="language" ng-model="selectedValue.lang">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Website</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="www.example.com" ng-model="selectedValue.website">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Stars</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" ng-model="selectedValue.stars">
+                        </div>
+                    </div>
+                    <div  class="row form-group">
+                        <label class="col-sm-2 control-label">Interview</label>
+                        <div ng-hide="selectedValue.isInterviewed" class="col-sm-10">
+                            <button type="button" class="btn btn-primary" ng-click="addInterview()">Add</button>
+                        </div>
+                        <div ng-hide="!selectedValue.isInterviewed" class="col-sm-10 interview">
+                            <form class="form-horizontal">
+                                <div ng-repeat="(index, q) in selectedValue.interview.questions">
+                                    <div class=" form-group">
+                                        <!--<label class="control-label">{{q.question}}</label>-->
+                                        <div class="row">
+                                            <div class="col-sm-11" style="padding-right: 0;">
+                                                <input type="text" class="form-control form-control-sm" placeholder="question #{{index + 1}}" ng-model="q.question" />
+                                            </div>
+                                            <div class="col-sm-1" style="padding-left: 0;" >
+                                                <button type="button" class="btn btn-danger btn-sm" style="width: auto;" ng-click="deleteQuest(index)"><i class="fa fa-trash-o"></i></button>
+                                            </div>
+                                        </div>
+                                        <textarea type="text" class="form-control" ng-model="q.answer"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div>
+                                      <button type="button" style="float: right;" class="btn btn-success" ng-click="addQuestion()">Add question</button>
+                                    </div>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="text-right" style="margin-right: 20px;">
+                            <button type="button" class="btn btn-warning" ng-click="editRestaurant()" >Edit</button>
+                            <button type="button" class="btn btn-secondary" ng-click="cancelEdit()" >Cancel</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        <div id="success" class="alert alert-success alert-dismissible" style="display: none;margin: 10px 40px;">
+            <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            Restaurant has been edited <strong>Successfully!</strong> 
+        </div>
+</div>
+    <script>
+        $(document).ready(function(){
+        $(".save,#close").click(function(){
+            animate();
+            setTimeout(() => {
+                $(".shadow-form").css("display","none");
+            }, 350);
+        });
+        $(".new-rest").click(function(){
+            //animate();
+            //setTimeout(() => {
+                $(".shadow-form").css("display","block");
+            //}, 350);
+        });
+        function animate(){
+            $(".modal-content").addClass("modal-close");
+            setTimeout(() => {
+                $(".modal-content").removeClass("modal-close");
+            }, 355);
+        }
+        $(".cancel").click(function(){
+            $("#info-rest").css("display","none");
+        });
+    });
+    </script>

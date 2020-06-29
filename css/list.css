@@ -1,0 +1,71 @@
+.search-form{
+	margin: 20px auto;
+	max-width:250px;
+}
+
+.restaurant-table{
+	margin: 0 50px;
+}
+
+.shadow-form{
+	display:none;
+	position: fixed;
+	left: 0;
+    top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 99999;
+	background: rgba(0,0,0,0.5);
+	padding-top:30px;
+}
+
+.modal-content{
+	position:relative;
+	margin:auto;
+	width: 600px;
+	animation-name: fadein;
+	animation-duration: 0.5s;
+}
+.modal-close{
+	animation-name: fadeout;
+	animation-duration: 0.4s;
+}
+@keyframes fadein{
+	from{top:-300px; opacity:0}
+	to{top:0; opacity:1}
+}
+@keyframes fadeout{
+	from{top: 0;opacity:1}
+	to{top:-300px;opacity:0}
+}
+
+.form-horizontal{
+	padding: 20px;
+}
+#close{
+	cursor:pointer;
+	font-size: 33px;
+	float:right;
+	color: lightgray;
+	margin-top:-10px;
+}
+#close:hover{
+	color: gray;
+}
+
+#info-rest{
+	display: none;	
+	margin: 0 50px;
+	margin-top: 40px;
+	border: 1px solid whitesmoke;
+}
+
+.content-rest{
+}
+
+
+.interview{
+	border: 1px gainsboro solid;
+	border-radius: 5px;
+	padding: 10px 20px;
+}

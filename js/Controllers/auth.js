@@ -15,7 +15,6 @@ app.controller("loginController", ["$scope", "$cookies", function($scope, $cooki
             console.log("error (accounts): " + error.code);
         });
         $scope.logIn = function(){
-            console.log(accountsList);
             var username = document.getElementById('username');
             var password = document.getElementById('password');
             var logged = false;
